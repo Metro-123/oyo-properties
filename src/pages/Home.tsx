@@ -29,7 +29,8 @@ export default function Home({ user }: { user?: User } = {}) {
   const navigate = useNavigate()
   const [location, setLocation] = useState('')
   const [propType, setPropType] = useState('')
-  const [priceRange, setPriceRange] = useState('')
+  const [minPrice, setMinPrice] = useState('')
+  const [maxPrice, setMaxPrice] = useState('')
   const [featured, setFeatured] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
 
@@ -54,18 +55,8 @@ export default function Home({ user }: { user?: User } = {}) {
     const params = new URLSearchParams()
     if (location) params.set('search', location)
     if (propType) params.set('type', propType)
-    if (priceRange) {
-      const map: Record<string, [string, string]> = {
-        '₦5M – ₦10M': ['5000000', '10000000'],
-        '₦10M – ₦20M': ['10000000', '20000000'],
-        '₦20M – ₦35M': ['20000000', '35000000'],
-        '₦35M – ₦50M': ['35000000', '50000000'],
-        '₦50M+': ['50000000', ''],
-      }
-      const [min, max] = map[priceRange] ?? ['', '']
-      if (min) params.set('min_price', min)
-      if (max) params.set('max_price', max)
-    }
+    if (minPrice) params.set('min_price', minPrice)
+    if (maxPrice) params.set('max_price', maxPrice)
     navigate(`/properties?${params.toString()}`)
   }
 
@@ -121,15 +112,25 @@ export default function Home({ user }: { user?: User } = {}) {
                 </select>
               </div>
               <div className="flex-1">
-                <label className="block text-xs font-semibold text-gray-400 mb-1 px-1">Price Range</label>
-                <select value={priceRange} onChange={(e) => setPriceRange(e.target.value)} className="w-full text-sm text-gray-700 bg-gray-50 rounded-lg px-3 py-2.5 outline-none focus:ring-2 focus:ring-green-300 border border-transparent focus:border-green-400">
-                  <option value="">Any Price</option>
-                  <option>₦5M – ₦10M</option>
-                  <option>₦10M – ₦20M</option>
-                  <option>₦20M – ₦35M</option>
-                  <option>₦35M – ₦50M</option>
-                  <option>₦50M+</option>
-                </select>
+                <label className="block text-xs font-semibold text-gray-400 mb-1 px-1">Price Range (₦)</label>
+                <div className="flex gap-2">
+                  <input
+                    type="number"
+                    min="0"
+                    placeholder="Min"
+                    value={minPrice}
+                    onChange={(e) => setMinPrice(e.target.value)}
+                    className="w-full text-sm text-gray-800 bg-gray-50 rounded-lg px-3 py-2.5 outline-none focus:ring-2 focus:ring-green-300 border border-transparent focus:border-green-400"
+                  />
+                  <input
+                    type="number"
+                    min="0"
+                    placeholder="Max"
+                    value={maxPrice}
+                    onChange={(e) => setMaxPrice(e.target.value)}
+                    className="w-full text-sm text-gray-800 bg-gray-50 rounded-lg px-3 py-2.5 outline-none focus:ring-2 focus:ring-green-300 border border-transparent focus:border-green-400"
+                  />
+                </div>
               </div>
               <button type="submit" className="md:self-end px-6 py-2.5 text-sm font-bold text-white rounded-xl transition-all hover:opacity-90 active:scale-95 whitespace-nowrap" style={{ background: '#16a34a' }}>
                 Search Properties
