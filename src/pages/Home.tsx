@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import PropertyCard from '../components/PropertyCard'
-import RooftopDivider from '../components/RooftopDivider'
 import { api } from '../lib/api'
 import { buildTeaser } from '../lib/teaser'
 
@@ -145,7 +144,7 @@ export default function Home({ user }: { user?: User } = {}) {
             </div>
           </div>
         </div>
-        <RooftopDivider color="var(--color-stone-50)" background="transparent" />
+        <div className="rooftop-divider opacity-20" style={{ backgroundColor: 'var(--color-stone-50)' }} />
       </section>
 
       {/* STATS */}

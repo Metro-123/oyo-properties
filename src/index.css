@@ -1,11 +1,11 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
-  /* ---- Golden Hour Luxury ----
-     wine   – deep burgundy, the site's dominant dark (navbar, footer, hero scrim)
-     gold   – champagne gold, the primary accent (CTAs, dividers, active states)
+  /* ---- Golden Hour Luxury Palette ----
+     wine   – deep burgundy, dominant dark tone
+     gold   – champagne gold, primary accent
      cream  – warm parchment page background
-     ink    – near-black warm brown-text
+     ink    – near-black warm brown text
   */
   --color-wine-950: #2e1114;
   --color-wine-900: #3a161a;
@@ -28,29 +28,30 @@
   --color-ink-700: #4a3c30;
   --color-ink-500: #7a6c5c;
 
-  /* Legacy alias so existing utility references keep working */
+  /* Legacy aliases so existing utility references keep working */
   --color-stone-50: #f7f2e6;
   --color-stone-100: #f0e9d8;
   --color-stone-200: #e3d8bc;
 
-  --font-display: 'Cormorant', 'Iowan Old Style', serif;
-  --font-body: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", "Cormorant", "Iowan Old Style", serif;
+  --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
 
   /* Rehome Tailwind's built-in "green" scale onto the gold/wine palette, so
-     every existing green-* utility class across the site (buttons, badges,
-     borders) picks up the new look without touching every file individually. */
+     every existing green-* utility class across the site
+     picks up the new look automatically. */
   --color-green-50: #faf3e3;
-  --color-green-100: #f2e2be;
-  --color-green-200: #e6cb90;
-  --color-green-300: #d2ad63;
-  --color-green-400: #bb9550;
+  --color-green-100: #f3e2be;
+  --color-green-200: #e3d8bc;
+  --color-green-300: #f0dcae;
+  --color-green-400: #d2ad63;
   --color-green-500: #a67c3d;
   --color-green-600: #8a6a30;
-  --color-green-700: #6e5326;
+  --color-green-700: #6e2b33;
   --color-green-800: #4a1d22;
   --color-green-900: #2e1114;
 }
 
+/* Global Styles */
 html {
   scroll-behavior: smooth;
 }
@@ -58,27 +59,31 @@ html {
 body {
   font-family: var(--font-body);
   color: var(--color-ink-900);
-  background: var(--color-cream-50);
+  background-color: var(--color-cream-50);
 }
 
-h1, h2, h3, .font-display {
+h1,
+h2,
+h3,
+.font-display {
   font-family: var(--font-display);
   letter-spacing: -0.005em;
 }
 
-/* ---- Signature motif: rooftop skyline ----
-   A repeating silhouette of gabled, corrugated roofs -- Ibadan is nicknamed
-   "The Brown Roofed City". Used as a section divider throughout the site. */
+/* ---- Signature motif: rooftop skyline ---- */
 .rooftop-divider {
   display: block;
   width: 100%;
   height: 28px;
 }
+
 @media (min-width: 768px) {
-  .rooftop-divider { height: 40px; }
+  .rooftop-divider {
+    height: 40px;
+  }
 }
 
-/* ---- Eyebrow label: small tracked caption above headings ---- */
+/* ---- Eyebrow label ---- */
 .eyebrow {
   font-family: var(--font-body);
   font-weight: 700;
@@ -91,21 +96,28 @@ h1, h2, h3, .font-display {
 .btn-gold {
   font-family: var(--font-body);
   font-weight: 700;
-  background: var(--color-gold-500);
+  background-color: var(--color-gold-500);
   color: var(--color-wine-950);
   transition: background-color 0.2s ease;
 }
-.btn-gold:hover { background: var(--color-gold-600); }
+
+.btn-gold:hover {
+  background-color: var(--color-gold-600);
+}
 
 .btn-ghost-dark {
   font-family: var(--font-body);
   font-weight: 500;
-  border: 1px solid rgba(210,173,99,0.55);
+  border: 1px solid rgba(210, 173, 99, 0.55);
   color: var(--color-gold-300);
   letter-spacing: 0.02em;
   transition: border-color 0.2s ease, background-color 0.2s ease;
 }
-.btn-ghost-dark:hover { background: rgba(210,173,99,0.1); border-color: rgba(210,173,99,0.9); }
+
+.btn-ghost-dark:hover {
+  background-color: rgba(210, 173, 99, 0.1);
+  border-color: rgba(210, 173, 99, 0.9);
+}
 
 .btn-outline-ink {
   font-family: var(--font-body);
@@ -114,16 +126,25 @@ h1, h2, h3, .font-display {
   color: var(--color-ink-900);
   transition: background-color 0.2s ease, color 0.2s ease;
 }
-.btn-outline-ink:hover { background: var(--color-ink-900); color: #fff; }
+
+.btn-outline-ink:hover {
+  background-color: var(--color-ink-900);
+  color: #ffffff;
+}
 
 /* ---- Editorial card ---- */
 .card-editorial {
-  background: #fff;
+  background-color: #ffffff;
   border: 1px solid var(--color-cream-200);
   border-radius: 6px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
