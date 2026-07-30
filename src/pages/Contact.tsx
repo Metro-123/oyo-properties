@@ -49,7 +49,7 @@ export default function Contact({ user }: { user?: User } = {}) {
   return (
     <div>
       {/* Header */}
-      <section style={{ background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 60%, #f0fdf4 100%)' }} className="py-20">
+      <section style={{ background: 'linear-gradient(135deg, var(--color-gold-50) 0%, var(--color-gold-100) 60%, var(--color-gold-50) 100%)' }} className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <p className="text-xs font-bold text-green-600 uppercase tracking-widest mb-3">Get In Touch</p>
           <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-5">Contact Us</h1>
@@ -67,7 +67,7 @@ export default function Contact({ user }: { user?: User } = {}) {
             <div className="space-y-5 mb-8">
               {CONTACT_INFO.map((c) => (
                 <div key={c.label} className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 text-lg" style={{ background: '#f0fdf4' }}>{c.icon}</div>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 text-lg" style={{ background: 'var(--color-gold-50)' }}>{c.icon}</div>
                   <div>
                     <div className="text-xs font-bold text-gray-400 uppercase tracking-wide">{c.label}</div>
                     {c.href ? (
@@ -109,7 +109,7 @@ export default function Contact({ user }: { user?: User } = {}) {
                     Please log in or create a free account so our team can get back to you.
                   </p>
                   <div className="flex items-center justify-center gap-3">
-                    <Link to="/login?next=/contact" className="px-6 py-2.5 text-sm font-bold text-white rounded-xl" style={{ background: '#16a34a' }}>Sign In</Link>
+                    <Link to="/login?next=/contact" className="px-6 py-2.5 text-sm font-bold text-white rounded-xl" style={{ background: 'var(--color-gold-600)' }}>Sign In</Link>
                     <Link to="/register" className="px-6 py-2.5 text-sm font-bold text-gray-700 border border-gray-200 rounded-xl">Create Account</Link>
                   </div>
                 </div>
@@ -120,7 +120,7 @@ export default function Contact({ user }: { user?: User } = {}) {
                   <p className="text-gray-400 text-sm leading-relaxed max-w-sm mx-auto">
                     Thank you for reaching out. Our team will get back to you within 24 hours.
                   </p>
-                  <button onClick={() => setSent(false)} className="mt-6 px-6 py-2.5 text-sm font-semibold text-white rounded-xl" style={{ background: '#16a34a' }}>
+                  <button onClick={() => setSent(false)} className="mt-6 px-6 py-2.5 text-sm font-semibold text-white rounded-xl" style={{ background: 'var(--color-gold-600)' }}>
                     Send Another Message
                   </button>
                 </div>
@@ -156,7 +156,7 @@ export default function Contact({ user }: { user?: User } = {}) {
                       <label className="block text-xs font-semibold text-gray-500 mb-1.5">Message *</label>
                       <textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} rows={5} placeholder="Tell us how we can help you..." className="w-full text-sm bg-gray-50 rounded-xl px-4 py-3 outline-none border border-gray-200 focus:ring-2 focus:ring-green-300 focus:border-green-400 resize-none" />
                     </div>
-                    <button type="submit" disabled={submitting} className="w-full py-3.5 text-sm font-bold text-white rounded-xl transition-all hover:opacity-90 disabled:opacity-60" style={{ background: '#16a34a' }}>
+                    <button type="submit" disabled={submitting} className="w-full py-3.5 text-sm font-bold text-white rounded-xl transition-all hover:opacity-90 disabled:opacity-60" style={{ background: 'var(--color-gold-600)' }}>
                       {submitting ? 'Sending...' : 'Send Message'}
                     </button>
                   </form>

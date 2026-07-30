@@ -63,7 +63,7 @@ export default function PropertyDetail() {
       <div className="text-center">
         <div className="text-5xl mb-4">🏚️</div>
         <h2 className="text-xl font-bold text-gray-800 mb-2">Property not found</h2>
-        <button onClick={() => navigate('/properties')} className="mt-4 px-6 py-2.5 text-sm font-bold text-white rounded-xl" style={{ background: '#16a34a' }}>Back to Listings</button>
+        <button onClick={() => navigate('/properties')} className="mt-4 px-6 py-2.5 text-sm font-bold text-white rounded-xl" style={{ background: 'var(--color-gold-600)' }}>Back to Listings</button>
       </div>
     </div>
   )
@@ -102,7 +102,7 @@ export default function PropertyDetail() {
               <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
                 <div>
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xs font-bold px-2.5 py-1 rounded-full text-white" style={{ background: property.listing_type === 'rent' ? '#2563eb' : '#16a34a' }}>
+                    <span className="text-xs font-bold px-2.5 py-1 rounded-full text-white" style={{ background: property.listing_type === 'rent' ? 'var(--color-wine-800)' : 'var(--color-gold-600)' }}>
                       {property.listing_type === 'rent' ? 'For Rent' : 'For Sale'}
                     </span>
                     <span className="text-xs bg-gray-100 text-gray-600 font-medium px-2.5 py-1 rounded-full">{property.type}</span>
@@ -111,7 +111,7 @@ export default function PropertyDetail() {
                   <p className="text-gray-400 mt-1 flex items-center gap-1"><span>📍</span> {property.location}</p>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl font-black" style={{ color: '#16a34a' }}>{property.price_display}</div>
+                  <div className="text-3xl font-black" style={{ color: 'var(--color-gold-600)' }}>{property.price_display}</div>
                 </div>
               </div>
 
@@ -136,7 +136,7 @@ export default function PropertyDetail() {
               <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
                 <h2 className="text-lg font-black text-gray-900 mb-4">Listed By</h2>
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-full flex items-center justify-center text-lg font-bold text-white shrink-0" style={{ background: '#16a34a' }}>
+                  <div className="w-14 h-14 rounded-full flex items-center justify-center text-lg font-bold text-white shrink-0" style={{ background: 'var(--color-gold-600)' }}>
                     {property.agents.avatar_initials}
                   </div>
                   <div>
@@ -196,7 +196,7 @@ export default function PropertyDetail() {
                     <label className="block text-xs font-semibold text-gray-500 mb-1">Preferred viewing date</label>
                     <input type="date" value={viewingDate} onChange={(e) => setViewingDate(e.target.value)} className="w-full text-sm bg-gray-50 rounded-lg px-3 py-2.5 outline-none border border-gray-200 focus:ring-2 focus:ring-green-300 focus:border-green-400" />
                   </div>
-                  <button type="submit" disabled={submitting} className="w-full py-3 text-sm font-bold text-white rounded-xl transition-all hover:opacity-90 disabled:opacity-60" style={{ background: '#16a34a' }}>
+                  <button type="submit" disabled={submitting} className="w-full py-3 text-sm font-bold text-white rounded-xl transition-all hover:opacity-90 disabled:opacity-60" style={{ background: 'var(--color-gold-600)' }}>
                     {submitting ? 'Sending...' : 'Send Inquiry'}
                   </button>
                 </form>
@@ -205,7 +205,7 @@ export default function PropertyDetail() {
               <div className="mt-5 pt-5 border-t border-gray-100 text-center">
                 <p className="text-xs text-gray-400">Or call directly</p>
                 {property.agents && (
-                  <a href={`tel:${property.agents.phone}`} className="block mt-2 text-sm font-bold hover:text-green-600 transition-colors" style={{ color: '#16a34a' }}>
+                  <a href={`tel:${property.agents.phone}`} className="block mt-2 text-sm font-bold hover:text-green-600 transition-colors" style={{ color: 'var(--color-gold-600)' }}>
                     📞 {property.agents.phone}
                   </a>
                 )}

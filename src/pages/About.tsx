@@ -33,9 +33,9 @@ export default function About() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative overflow-hidden py-24" style={{ background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 60%, #f0fdf4 100%)' }}>
+      <section className="relative overflow-hidden py-24" style={{ background: 'linear-gradient(135deg, var(--color-gold-50) 0%, var(--color-gold-100) 60%, var(--color-gold-50) 100%)' }}>
         <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute bottom-8 left-10 w-44 h-44 rounded-full" style={{ background: '#16a34a' }} />
+          <div className="absolute bottom-8 left-10 w-44 h-44 rounded-full" style={{ background: 'var(--color-gold-600)' }} />
         </div>
         <div className="absolute hidden lg:block top-8 right-16 w-72 h-72 rounded-full overflow-hidden border-8 border-white/70 shadow-2xl">
           <img
@@ -48,7 +48,7 @@ export default function About() {
           <p className="text-xs font-bold text-green-600 uppercase tracking-widest mb-3">About Us</p>
           <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
             Ibadan's Most Trusted
-            <span className="block" style={{ color: '#16a34a' }}>Property Platform</span>
+            <span className="block" style={{ color: 'var(--color-gold-600)' }}>Property Platform</span>
           </h1>
           <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
             OyoProperties was founded with a simple mission: to make finding, buying, renting, and
@@ -83,7 +83,7 @@ export default function About() {
                 { value: '6', label: 'Years of Experience' },
               ].map((s) => (
                 <div key={s.label} className="bg-gray-50 rounded-xl p-4">
-                  <div className="text-2xl font-black" style={{ color: '#16a34a' }}>{s.value}</div>
+                  <div className="text-2xl font-black" style={{ color: 'var(--color-gold-600)' }}>{s.value}</div>
                   <div className="text-xs text-gray-400 mt-0.5">{s.label}</div>
                 </div>
               ))}
@@ -129,7 +129,7 @@ export default function About() {
                     <div className="text-xs text-gray-400 leading-relaxed">{m.desc}</div>
                   </div>
                 </div>
-                <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-4 border-white shadow" style={{ background: '#16a34a' }} />
+                <div className="absolute left-6 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-4 border-white shadow" style={{ background: 'var(--color-gold-600)' }} />
                 <div className="hidden md:block flex-1" />
               </div>
             ))}
@@ -153,7 +153,7 @@ export default function About() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {agents.map((agent) => (
                 <div key={agent.id} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-7 text-center hover:shadow-md transition-shadow">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center text-xl font-black text-white mx-auto mb-4" style={{ background: '#16a34a' }}>
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center text-xl font-black text-white mx-auto mb-4" style={{ background: 'var(--color-gold-600)' }}>
                     {agent.avatar_initials}
                   </div>
                   <div className="font-black text-gray-900 mb-1">{agent.name}</div>
@@ -165,7 +165,7 @@ export default function About() {
                   )}
                   <div className="text-xs text-gray-400">{agent.listings_count} active listings</div>
                   <div className="mt-4 pt-4 border-t border-gray-100">
-                    <a href={`tel:${agent.phone}`} className="block text-xs font-semibold hover:text-green-600 transition-colors" style={{ color: '#16a34a' }}>
+                    <a href={`tel:${agent.phone}`} className="block text-xs font-semibold hover:text-green-600 transition-colors" style={{ color: 'var(--color-gold-600)' }}>
                       {agent.phone}
                     </a>
                     <a href={`mailto:${agent.email}`} className="block text-xs text-gray-400 hover:text-green-600 transition-colors mt-1">{agent.email}</a>
@@ -178,7 +178,7 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="py-20" style={{ background: 'linear-gradient(135deg, #14532d 0%, #15803d 100%)' }}>
+      <section className="py-20" style={{ background: 'linear-gradient(135deg, var(--color-wine-950) 0%, var(--color-gold-700) 100%)' }}>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-5">Ready to Find Your Property?</h2>
           <p className="text-green-100 mb-8 text-sm leading-relaxed">Join over 1,000 happy customers who found their perfect home through OyoProperties.</p>
